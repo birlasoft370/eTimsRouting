@@ -1,0 +1,40 @@
+
+<mat-grid-list cols="2" rowHeight="100%">
+    <mat-grid-tile>
+        <div class="login">
+            <div>
+                <h1>CitePro</h1>
+            </div>
+            <div>
+                <h2>Welcome</h2>
+            </div>
+            <p>
+                <mat-form-field appearance="legacy">
+                    <mat-label>EmailId</mat-label>
+                    <input matInput placeholder="EmailId">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password">
+                </mat-form-field>
+            </p>
+            <p>
+                <button class="btn btn-primary login-btn" (click)="onSubmit()">Login</button>
+            </p>
+            <p>
+                <a href="#">change Password</a>
+            </p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+     
+            <img src="../../assets/images/login.jpg">  
+            
+   
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+

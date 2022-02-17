@@ -1,1 +1,149 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$etims-cw5-primary: mat.define-palette(mat.$indigo-palette);
+$etims-cw5-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$etims-cw5-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$etims-cw5-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $etims-cw5-primary,
+      accent: $etims-cw5-accent,
+      warn: $etims-cw5-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($etims-cw5-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.w-100 {
+  width: 100%;
+}
+.main-container {
+  position: absolute;
+  top: 64px;
+  left: 220px;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+}
+.wrapper {
+  position: relative;
+}
+.wrapper,
+body,
+html {
+  min-height: 100%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.main-wrp {
+  padding: 15px;
+}
+.content-wrapper {
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 220px;
+}
+.content-inner-wrp {
+  transition: margin-left 0.3s ease-in-out;
+  padding: 15px 0.5rem;
+}
+.mat-form-field-appearance-fill.mat-form-wrp .mat-form-field-flex {
+  padding: 0.75em 0.75em 0 0.75em;
+  background-color: #fff !important;
+  border-radius: 0 !important;
+  position: relative;
+  :after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 50%;
+    position: absolute;
+    right: 0;
+    background: #e5e6ea;
+    top: 0;
+    bottom: 0;
+
+    :last-child {
+      content: "";
+      display: block;
+      background: red;
+    }
+  }
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.float-right {
+  float: right;
+}
+.full-width {
+  width: 100%;
+}
+button.boot-btn,
+.pad-btn {
+  background-color: #0f73ee;
+  border: none;
+  color: white;
+  padding: 2px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-size: 12px;
+}
+mat-list.mat-list.mat-list-base.list-customer span,
+mat-list.mat-list.mat-list-base.special-program span {
+  justify-content: space-between;
+  font-size: 12px;
+}
+span.round-dot {
+  width: 5px;
+  height: 5px;
+  background: #0f73ee;
+  border-radius: 100%;
+}
+/*table*/
+.sarch-table .mat-form-field-wrapper {
+  padding: 0;
+}
+.mat-header-cell {
+  background: #55585a;
+  color: #fff;
+}
+.open-account {
+  margin-left: 10px;
+}

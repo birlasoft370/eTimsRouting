@@ -1,0 +1,108 @@
+<div class="sarch-table">
+  <div class="row m-0 mt-3">
+    <div class="col-lg-4">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Event</button>
+        <button type="button" class="btn btn-secondary">Entity</button>
+        <mat-form-field appearance="fill" class="open-account">
+          <mat-label>Open Accounts</mat-label>
+          <select matNativeControl>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="eventicons">
+        <button mat-button><img src="./assets/images/Path%205744.svg"></button>
+        <button mat-button><img src="./assets/images/Group%208090.svg"></button>
+        <button mat-button><img src="./assets/images/Group%208089.svg"></button>
+        <button mat-button [matMenuTriggerFor]="menu"><img src="./assets/images/Group%208102.svg"></button>
+        <button mat-button><img src="./assets/images/Group%208091.svg"></button>
+      </div>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Xl</button>
+      <button mat-menu-item>Xl Detail</button>
+      <button mat-menu-item>PDF</button>
+      <button mat-menu-item>CSV</button>
+      <button mat-menu-item>Print</button>
+    </mat-menu>
+
+
+    <div class="col-lg-2 align-right">
+      <input class="form-control" ng-model="search" type="text" placeholder="Search">
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="mat-elevation-z8">
+
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="Eventid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Event id</th>
+        <td mat-cell *matCellDef="let row"><a href="">100003909</a></td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="VoilationdateTime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Voilation date |Time</th>
+        <td mat-cell *matCellDef="let row">09/21/2020 |10:34:28 AM</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>status</th>
+        <td mat-cell *matCellDef="let row">Third Notice</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="Dategory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dategory</th>
+        <td mat-cell *matCellDef="let row">Speeding</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="DeploymentID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Deployment ID</th>
+        <td mat-cell *matCellDef="let row">52-202009211200</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="LocationDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Location Code | Description</th>
+        <td mat-cell *matCellDef="let row">117- 518 Taraval st, san Franciso, Ca 94118</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="LaneNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>LaneNumber</th>
+        <td mat-cell *matCellDef="let row">1</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="AmyDue">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>AmyDue</th>
+        <td mat-cell *matCellDef="let row">$98 </td>
+      </ng-container>
+
+      <ng-container matColumnDef="abc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>abc</th>
+        <td mat-cell *matCellDef="let row"><img src=""></td>
+      </ng-container>
+
+
+
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]" aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

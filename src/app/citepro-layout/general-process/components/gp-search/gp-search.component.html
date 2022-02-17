@@ -1,0 +1,245 @@
+<div class="search-wrapper" color="primary">
+    <form class="example-form" [formGroup]="searchFrom" (ngSubmit)="onSubmit()">
+        <div class="search-container">
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Ticket Number</mat-label>
+                    <input matInput placeholder="Enter Ticket Number" formControlName="ticketNo" name="ticketNo"
+                        value="" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Event ID</mat-label>
+                    <input matInput placeholder="Enter Event ID" formControlName="eventId" name="eventId" value="" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Enter Name" value="" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Plate Number</mat-label>
+                    <input matInput placeholder="Enter Plate Number" value="" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Driver's License</mat-label>
+                    <input matInput placeholder="Enter Driver's License" value="" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="mat-form-wrp" appearance="fill">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="Enter Zip Code" value="" />
+                </mat-form-field>
+            </div>
+            <div class="w-100">
+                <button type="submit" mat-raised-button color="primary" class="w-100">Search</button>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Open Accounts</mat-checkbox>
+                </section>
+            </div>
+            <div><span (click)="toggleStatus()">Advance Search </span>
+                <mat-icon>arrow_downward</mat-icon>
+                <div class="advance-search-form">
+                    <div *ngIf="isShow" class="advance-search-modal">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Status</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Category</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Location</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Deployment</mat-label>
+                                    <input title="Deployment" matInput>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Address</mat-label>
+                                    <input title="Address" matInput>
+                                </mat-form-field>
+                                <mat-checkbox style="color: #000;" class="w-100">Search
+                                    Ticket
+                                    Level Name &
+                                    Address</mat-checkbox>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>City</mat-label>
+                                            <input title="City" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>State</mat-label>
+                                            <mat-select>
+                                                <mat-option value="one">First option</mat-option>
+                                                <mat-option value="two">Second option</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Approving Officer</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Deployment</mat-label>
+                                            <input title="Deployment" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Category</mat-label>
+                                            <mat-select>
+                                                <mat-option value="one">First option</mat-option>
+                                                <mat-option value="two">Second option</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Lane</mat-label>
+                                    <input title="Lane" matInput>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Jurisdication</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Print Branch ID</mat-label>
+                                    <input title="Branch" matInput>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Workflow Queues</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="mt-25 w-100">
+                                    <mat-label>Workflow User</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Payment Plan ID</mat-label>
+                                    <input title="Payment" matInput>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Amber Range(From)</mat-label>
+                                            <input title="Range from" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Amber Rabge(TO)</mat-label>
+                                            <input title="Rabge to" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Red Range(From)</mat-label>
+                                            <input title="Red" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Red Range(To)</mat-label>
+                                            <input title="Red to" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Speed Range(From)</mat-label>
+                                            <input title="Speed" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="fill" class="w-100">
+                                            <mat-label>Red Range(To)</mat-label>
+                                            <input title="range to" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Default Judgement Search</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Notice Date</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="fill" class="mt-25 w-100">
+                                    <mat-label>Violation Date Range</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">First option</mat-option>
+                                        <mat-option value="two">Second option</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <span>Previous Results</span>
+                <span class="ml-20">Recent Searches</span>
+            </div>
+        </div>
+
+    </form>
+
+</div>

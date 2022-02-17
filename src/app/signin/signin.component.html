@@ -1,0 +1,39 @@
+<mat-grid-list cols="2" rowHeight="100%">
+    <mat-grid-tile>
+        <div class="login">
+            <div>
+                <h1>CitePro</h1>
+            </div>
+            <div>
+                <h2>Welcome</h2>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>EmailId</mat-label>
+                        <input matInput placeholder="EmailId" formControlName="email"  name="email" />
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password"  name="password" />
+                    </mat-form-field>
+                </p>
+                <p>
+                    <button type="submit" class="btn btn-primary login-btn">Login</button>
+                </p>
+            </form>
+            <p>
+                <a [routerLink]="['/change-password']">change Password</a>
+            </p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+        <img title="login" src="../../assets/images/login.jpg">
+
+
+    </mat-grid-tile>
+
+</mat-grid-list>
